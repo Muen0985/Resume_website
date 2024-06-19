@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企業實習項目展示</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 5px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+        }
+        .project-description {
+            margin-bottom: 30px;
+        }
+        .report-section {
+            margin-bottom: 40px;
+        }
+        .report-section img {
+            display: block;
+            max-width: 100%;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .text-description {
+            margin-bottom: 20px;
+        }
+        .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        }
+        .image-item {
+            flex: 1 1 calc(50% - 20px);
+            box-sizing: border-box;
+        }
+        .image-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .image-item.small {
+        flex: 1 1 calc(25% - 20px); /* 縮小為原來的 50% 大小 */
+        }
+        .text-description {
+            text-align: center;
+            margin: 10px 0 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 style="background-color: rgb(236, 198, 149);">企業實習項目展示</h1>
+        </div>
+        <div class="project-description">
+            <h2>實習內容</h2>
+            <p>實習公司 : 富邦人壽保險股份有限公司 </p>
+            <span></span>
+            <p>擔任職位 : 資料分析師</p>
+            <hr>
+            <section class="tasks-experience">
+                <h4>主要任務</h4>
+                <ul>
+                    <li><h5>使用公司的原始資料經過資料處理後，以Power BI製作報表供主管查看、評估。</h5></li>
+                    <li><h5>使用Python撰寫資料處理流程的自動化，也撰寫Excel公式協助同事能快速整理、計算資料。</h5></li>
+                    <li><h5>把在Access的MS SQL所做的資料處理流程，轉換成Power BI的M語言，達到主管所期望的直接使用Power BI做資料處理和報表。</h5></li>
+                    <li><h5>提供資料工程方面的建議供主管參考。</h5></li>
+                </ul>
+                <h4>專案經歷</h4>
+                <ul>
+                    <li><h5>TA(旅平險)報表</h5></li>
+                    <li><h5>員工團保分析</h5></li>
+                    <li><h5>理賠報表</h5></li>
+                </ul>
+            </section>
+            
+        </div>
+        <hr>
+        <div class="report-section">
+            <h2>製作報表 &nbsp; <span style="font-size: small;">(因公司個資安全皆須把內容去除，實際上有做更多的報表)</span></h2>
+            <div class="image-container">
+                <div class="image-item">
+                    <img src="src_image/intern_project/image001.jpg" alt="Report Image 1">
+                    <p class="text-description">製作保險商品比較的統計報表</p>
+                </div>
+                <div class="image-item">
+                    <img src="src_image/intern_project/image002.jpg" alt="Report Image 2">
+                    <p class="text-description">製作理賠項目比較的統計報表</p>
+                </div>
+            </div>
+            <hr>
+            <div class="image-container">
+                <div class="image-item.small">
+                    <img src="src_image/intern_project/code01.jpg" alt="Report Image 3">
+                    <p class="text-description">撰寫原始資料的處理再合併程式</p>
+                </div>
+                <div class="image-item.small">
+                    <img src="src_image/intern_project/code02.jpg" alt="Report Image 4">
+                </div>
+            </div>
+        </div>
+
+        <div class="additional-info w3-card w3-padding">
+            <h2 class="w3-border-bottom">實習感想</h2>
+            <div class="info-section">
+                <h3>知識方面</h3>
+                <p>1. 透過同事的授課，學習到關於團險的各種商品方案等</p>
+                </p>2. 了解大公司在各種作業流程上是如何運作的</p>  
+            </div>
+            <div class="info-section">
+                <h3>軟技能方面</h3>
+                <p>1. 學習到應該如何與同事溝通、報告討論</p>
+                <p>2. 如果要和他人聯絡，知道該如何做開頭和表達自己的需求</p>
+            </div>
+            <div class="info-section">
+                <h3>硬技能方面</h3>
+                <p>1. 更深入的了解如何使用power bi 和了解內部的power query 中的程式邏輯和特定的方法函式是如何撰寫的</p>
+                <p>2. 更熟悉SQL的語法</p>
+                <p>3. 了解公司處理資料的流程後可以撰寫程式碼鞋ˊ著作資料處你的自動化</p>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

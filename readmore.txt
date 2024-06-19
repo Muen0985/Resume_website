@@ -1,0 +1,3 @@
+<div class="w3-col m8 s12">
+            <p><a href="project6.html" class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></a></p>
+          </div>

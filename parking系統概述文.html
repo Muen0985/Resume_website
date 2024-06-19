@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Parking Pal 系統概述文</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b95107c1-9551-4596-ac3c-cad613af1b12" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_robert_stewart_spacewalk.jpg" style="object-position:center 40%"/><h1 class="page-title">Parking Pal 系統概述文</h1><p class="page-description"></p></header><div class="page-body"><p id="93acf3b7-072e-46a1-aaad-3ca681f9093b" class="">
+</p><p id="7c623302-8d57-498b-8b3d-8c4587ca889e" class="">編號：</p><p id="a1e72989-9b13-4282-ad1b-75416e525c9e" class="">專題名稱：ParkingPal 停車夥伴</p><p id="86c0d013-c202-46b3-9d18-d1a71066b4cf" class="">校名與科系：東吳大學資訊管理學系</p><ol type="1" id="fff932e0-77f1-4a50-97d6-9e176cf3c27a" class="numbered-list" start="1"><li><strong>前言</strong></li></ol><blockquote id="fa8a6a0d-0a43-476f-bc6c-df2a3fed771a" class="">產學合作公司: 財團法人資訊工業策進會</blockquote><p id="e72682db-cac1-47db-9a41-3540a3f6e1e1" class=""><strong>隨著現代城市的不斷發展，交通擁堵和停車問題已成為幾乎無法避免的挑戰。尤其是尋找停車位，常常讓人耗費大量時間。舉例而言，當人們計劃前往景點或各種場所時，通常會先查看附近的停車場，但仍需親自前往才能確定是否有可用車位。另外，在某個停車場排隊等候時，我們無法得知其他停車場的車位情況。假如我們認為其他停車場的等候時間較短，但實際上卻發現等候更多時間，這種情況會浪費我們的寶貴時間並造成困擾。因此，為了解決這些問題，我們開發了一個系統，提供合作停車場的即時車位狀況供人參考。此外，隨著自動化停車場的數量逐漸增加，我們還提供了線上支付和租借停車位的功能，以應對這一趨勢。最重要的是，我們的系統還配備了監視功能，並結合火災檢測識別技術，以確保民眾在停車時享有安全和便利。</strong></p><ol type="1" id="ea468b4a-4bb6-46d1-851f-bc6d1aaab5f0" class="numbered-list" start="1"><li><strong>創意描述</strong><ol type="a" id="0aa4bcad-2d5d-49e8-9a79-75a67130d2c6" class="numbered-list" start="1"><li><strong>以CNN模型中的ResNet-50作為機器學習的基礎。此模型運用了殘差學習的技術，能夠解決模型層數過高產生的梯度消失或爆炸的問題，在圖像辨識的訓練上起到很好的效果，且該模型提供了幾種不同的深度可供選擇，在實務上可以依資料量來決定要訓練的模型深度。此專題使用了50層的ResNet作為火災偵測模型的基礎架構。</strong></li></ol><ol type="a" id="52572312-1c3e-46ac-84c4-b7abadca0c90" class="numbered-list" start="2"><li><strong>提供便捷的線上繳費服務，免去排隊繳費機的麻煩，簡化繳費流程。</strong></li></ol><ol type="a" id="18429d6c-40dd-443b-b115-b5028fe1d2e9" class="numbered-list" start="3"><li><strong>支援與附近店家合作的消費折抵停車費功能，使用者可透過手機掃描QR code折抵費用。</strong></li></ol><ol type="a" id="c4740176-b757-43b5-b726-b764f561d9f1" class="numbered-list" start="4"><li><strong>提供方便的月租停車格租借功能，使用者可輕鬆租借停車位。</strong></li></ol><ol type="a" id="d8931dd1-f186-4bc8-8b1d-e217b80b9ccb" class="numbered-list" start="5"><li><strong>使用者可即時檢視車輛在停車場的影像(自己的車輛所屬位置)，增加停車安心感。</strong></li></ol><ol type="a" id="58e522a4-4dc4-4a3d-b38b-95675ff30f57" class="numbered-list" start="6"><li><strong>借助影像辨識技術，系統可協助監測火災情況，以迅速應對火災發生，提升安全性。</strong></li></ol><ol type="a" id="260fceb0-0001-49cf-9b5e-231c16d0ba29" class="numbered-list" start="7"><li><strong>即時提供合作停車場的空位資訊，協助使用者可依據停車場空位狀況做出好更好的停車地點選擇。</strong></li></ol></li></ol><ol type="1" id="a375137f-4a62-4a12-b59f-5e648816ee69" class="numbered-list" start="2"><li><strong>系統功能簡介</strong></li></ol><ol type="1" id="7005a063-63a5-4a56-b3a6-b595246682e5" class="numbered-list" start="3"><li><strong>點數獎勵機制：</strong></li></ol><blockquote id="07e7d772-b7ce-4930-977b-85ace1062eb0" class="">設置停車點數給予機制，可用此點數來折抵停車費用，藉此吸引民眾停車。而點數機制為，每停一次可得1點數，相當於新台幣一塊，可在本系統繳費時進行折抵。</blockquote><ol type="1" id="9abcc54c-d3d2-488f-8e6e-e43f48e5f5d9" class="numbered-list" start="1"><li><strong>線上繳停車費用：</strong></li></ol><blockquote id="32b44348-e03f-4db8-92cb-be3cc60cd7ef" class="">民眾可使用本系統繳交停車費用，也不必像繳費機需要先輸入車牌或是不易操作介面的狀況發生。只要先設好要付款的信用卡等付款方式，即可以快速完成繳費。</blockquote><ol type="1" id="58d6c1c6-0600-465f-9395-2984f27eae35" class="numbered-list" start="1"><li><strong>QR code掃碼折抵費用：</strong></li></ol><blockquote id="34182b2a-e21e-48a5-9188-07d6a92c329b" class="">若民眾停入的停車場有和附近商家合作，例如有消費可以折抵停車費用。那民眾就可使用本系統繳費功能中的QR code折抵費用功能，使用手機掃描商家提供的折抵QR code進行停車費折抵。</blockquote><ol type="1" id="8dab32f6-8923-4b03-91a8-f6aa6e0ef0f5" class="numbered-list" start="1"><li><strong>錢包：</strong></li></ol><blockquote id="4edeeb9e-0cec-4ff0-b113-70ef68608425" class="">錢包的功能即是讓民眾可以新增信用卡，讓在繳費時不用重新輸入信用卡資訊，加快出場速度。</blockquote><ol type="1" id="ddb63c4a-ac50-4992-9f0d-f2e7b6a23a4b" class="numbered-list" start="1"><li><strong>停車紀錄顯示：</strong></li></ol><blockquote id="36157e88-5ff2-4d68-96de-378ad6cb1a66" class="">當民眾有在此停車場停車，系統就會儲存此次停車的紀錄供用戶檢視，方便用戶可以計算在停車場的總花費。</blockquote><ol type="1" id="9c4e7137-7391-4033-981e-bf73126f7d3c" class="numbered-list" start="1"><li><strong>停車場流量顯示：</strong></li></ol><blockquote id="6f635066-9624-4083-96e4-512e48a6c376" class="">系統會顯示停車場周一到週五的車次流量，民眾可查看某停車場在某個時間點通常是否會有空位，協助民眾選擇停車地點。</blockquote><ol type="1" id="d7b5b3dd-063b-4ef4-b9d3-95eefae5f847" class="numbered-list" start="1"><li><strong>停車位月租服務：</strong></li></ol><p id="ade0af27-b16d-458f-9ff5-9b02099a82a0" class="">用戶可以在本系統上直接選擇想要的停車場查看是否有提供月租停車位。如果有提供便可在線上查看車位概況和大略位置，再進行線上繳費以租借停車格。</p><ol type="1" id="6f5a861f-7d07-4631-b11b-c61fec865172" class="numbered-list" start="1"><li><strong>停車場監控:</strong></li></ol><blockquote id="68d0a28d-b512-400f-ae58-4a585cf2d559" class="">用戶若有在某停車場內停車，便可在監控功能中查看自己的車子所在的即時影像。讓如果是停</blockquote><p id="0a5a37ca-5832-4d97-b1d3-b15d2be8b205" class="">在較偏遠且無人的停車場，也可以即時掌握現場狀況。</p><ol type="1" id="ffc17c19-ab4e-4f16-b09d-e04d4549e126" class="numbered-list" start="1"><li><strong>火災辨識：</strong></li></ol><blockquote id="1a7185cb-1e69-40f7-9aac-f71f18e19277" class="">運用影像辨識來偵測停車場是否發生火災，若有火災發生則可連絡鄰近的消防局以及時撲滅火勢。<p id="d0fc08f4-ba1f-4784-b78a-2fbfeed9453f" class="">首頁畫面、</p></blockquote><ol type="1" id="46a64ebc-91ba-447f-bebf-0ae84f5dc5c9" class="numbered-list" start="1"><li><strong>系統特色:</strong></li></ol><blockquote id="0e70e3e5-34ff-4d5e-86eb-a04e4bf85f6f" class="">本系統依據主要的三個頁面介紹:</blockquote><ol type="1" id="84c1256a-fd3c-45bf-b14d-8079abcbe5ee" class="numbered-list" start="1"><li><strong>主要頁面:</strong></li></ol><ol type="1" id="7483b01e-9ec7-43d0-9213-4c945a1df517" class="numbered-list" start="2"><li>具有停車場的即時空位資訊可以查看，會顯示停車場是否有剩餘的空位。</li></ol><ol type="1" id="924fa5b9-04a3-432a-abfc-accc21fb5c71" class="numbered-list" start="3"><li>活動資訊，讓用戶可以快速了解停車點數如何使用。</li></ol><ol type="1" id="9e2f0521-58ab-4a31-bc73-ba064450eb76" class="numbered-list" start="4"><li>出場繳費功能，包含用預先設定好的信用卡繳費和可以掃描停車折抵用的QR code。</li></ol><ol type="1" id="0ba24799-dcef-4483-800e-c893c2a90d2d" class="numbered-list" start="5"><li><strong>個人頁面:</strong></li></ol><ol type="1" id="d76af22c-84af-413c-b8df-dfc1fffaae21" class="numbered-list" start="6"><li>個人帳戶，用戶可以查看歷史停車相關資料紀錄包含停車點數的獲得跟使用，幫助用戶了解自己的停車習慣和花費。</li></ol><ol type="1" id="33112d80-c266-4fc8-91a3-fb870574e65a" class="numbered-list" start="7"><li>月租服務則是提供用戶查看有提供月租的停車場的月租概況，一樣使用平面圖顯示讓用戶知道車格大略位置，確定要租約再進行繳費。讓用戶快速找到符合自身需求的月租車位。</li></ol><ol type="1" id="06023a1d-2531-49ba-927c-01d88e900565" class="numbered-list" start="8"><li>停車場流量查看，可運用提供停車場的量統計，以長條圖的方式顯示星期一到五通常一天的停車流量，讓用戶可以依據避免尖峰時段前往停車。</li></ol><ol type="1" id="e16ae8be-e206-4e0b-816d-7075d015a082" class="numbered-list" start="9"><li><strong>監控頁面:</strong></li></ol><ol type="1" id="59eb8a52-14c2-485b-b0ec-bb54e1f308ac" class="numbered-list" start="10"><li>主要是為了當停車場是無人停車場，用戶可以透過監控功能的畫面查看停車場中自己車子的即時狀況。讓民眾可以安心停車。</li></ol><ol type="1" id="c08d831b-567b-449c-89c6-bf2d3ac493d9" class="numbered-list" start="11"><li>火災辨識功能，特別是為了戶外且沒有裝設濃煙偵測器的停車場，系統可以主動辨識是否發生火災，並主動通報鄰近消防局，跟通知在此停車場內的用戶。</li></ol><ol type="1" id="14cd82de-a04a-40a6-bd10-c7844de69160" class="numbered-list" start="12"><li><strong>系統開發工具與技術</strong><ol type="a" id="bc55c074-5820-499d-a371-66aafb419617" class="numbered-list" start="1"><li><strong>介面設計: 先使用Figma做出頁面大致的元件配置。</strong></li></ol><ol type="a" id="d3b06b8c-6d17-458f-84a3-61dc493a2c39" class="numbered-list" start="2"><li><strong>軟體開發平台: 使用Android Studio 進行實際介面配置，並以Java撰寫程式碼。</strong></li></ol><ol type="a" id="6e578cbd-c009-4f3e-be33-0071f995fe83" class="numbered-list" start="3"><li><strong>機器學習: TensorFlow: 協助轉化蒐集而來的圖片資料集之格式，</strong></li></ol></li></ol><blockquote id="efde4710-6440-4bb1-88f8-d96a603cb4da" class="">以及建立深度學習的模型及訓練。<p id="eae76c30-542a-4855-ab63-95f6b1f86bdc" class=""><strong>ResNet-50: CNN模型的一種，運用了殘差學習的技術，</strong></p><p id="270a533e-ffa8-460b-9674-57416641845f" class=""><strong>在圖像辨識的訓練上起到很好的效果，此專題使用了50</strong></p><p id="ef161c43-581e-4530-a8b9-e2dfb0d2a676" class=""><strong>層的ResNet作為火災偵測模型的基礎架構。</strong></p><p id="4e305659-ab68-4733-8c7e-40bac52af693" class=""><strong>OpenCV:用於攝影功能，搭配已訓練好的火災偵測模型，</strong></p><p id="1c9e5171-0981-467e-94e0-36c04377af49" class=""><strong>可做到準確的即時辨識。</strong></p></blockquote><ol type="1" id="c55c0ce6-61e0-495c-8677-9c1cc8ce549f" class="numbered-list" start="1"><li><strong>資料庫: 使用Firebase real time database進行資料庫設計及保存及即時更新用戶資料，及建立、註冊登入頁面。</strong></li></ol><p id="2530e2a9-9e82-47db-8a90-3e7d394ad487" class=""><strong>六、系統使用對象</strong></p><p id="2ee6499b-3113-4cc3-b3e6-ff65f6ce37b4" class=""><strong>本系統針對兩大主要使用對象而設計。首先，對於希望即時了解停車場狀況的司機和需提前規劃停車的人，讓他們方便查詢附近停車場的車位情況，節省時間，並比較不同停車場的車位狀況以選擇適合的場所。其次，長期停車場的月租戶和經常使用停車場的人可透過系統實現快速出場繳費，免去排隊麻煩，提高便利性。此外，系統還協助月租戶管理租車位服務。值得一提的是，系統具有火災辨識功能，增強停車場的安全性，保障使用者的安全。</strong></p><p id="44a9641a-cf02-4bae-a5d8-0fec0d7de6b6" class=""><strong>七、系統使用環境</strong></p><p id="1f9bd3d1-16fb-4cce-9b1a-bb9787e3ffa7" class=""><strong>本系統預計會上架到最常見的Google play供民眾下載，註冊完畢後即可開始體驗，使用行動裝置來安裝使用。</strong></p><p id="8e89015b-f1bc-44c9-acaf-5a4e6d087261" class=""><strong>八、結語</strong></p><p id="7112ebe0-b23c-4fa2-9f6b-18d357c3ce3d" class=""><strong>　</strong>我們的目標是透過這個系統，解決民眾在停車方面的煩惱，特別是現在要找臨時停車位或月租停車位不容易的問題。此外，我們希望縮短離場時間，讓民眾不必因支付而排隊，也改進了繳費機的使用流程，使其更加直覺。最後，我們透過科技應用在安全措施上，提高停車場的安全性，增加民眾願意選擇使用該停車場的意願。</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,23 @@
+<li class="w3-padding-16">
+          <span class="w3-large">
+            <span style="color: rgb(73, 157, 73);"><a href="cs01.html">Python 資料分析&網路爬蟲</a></span>           
+            </span><br>
+          <span></span>         
+          <span>從網路上YouTube等都有很多免費的學習資源，在學校也有選修過資料工程這門課學過網路爬蟲</span>
+        </li>
+
+        <li class="w3-padding-16">
+          <span class="w3-large">
+            <span style="color: rgb(232, 153, 104);"><a href="cs03.html">Tableau</a></span>
+          </span><br>
+          <span></span>         
+          <span>學習tableau的各種操作和進行資料視覺化</span>
+        </li>
+
+        <li class="w3-padding-16">
+          <span class="w3-large">
+            <span style="color: rgb(157, 80, 212);"><a href="cs07.html">Hadoop</a></span>
+            </span><br>
+          <span></span>         
+          <span>在大學選修大數據分析這門課，學習使用hadoop(用java撰寫mapreduce)和spark來做大數據的資料處理。</span>
+        </li>

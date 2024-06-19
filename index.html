@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<script src="https://kit.fontawesome.com/da6ab0d5ea.js" crossorigin="anonymous"></script>
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "", sans-serif}
+
+/* Custom styles for titles with colored borders and backgrounds */
+.header-background {
+    background-image: url('src_image/night_view.jpg');
+    background-size: cover;
+    background-position: 100% 34%;
+    background-repeat: no-repeat; 
+    height: 200px;
+}
+.title-border {
+  display: inline-block; /* Ensure the border wraps only around the text */
+  padding: 3px; /* Padding to add space around text */
+  background-color: #e0eccb; /* Light red background */
+  border-radius: 5px;
+}
+.title-border2{
+  display: inline-block; /* Ensure the border wraps only around the text */
+  padding: 3px; /* Padding to add space around text */
+  background-color: #f1eeca; /* Light red background */
+  border-radius: 5px;
+}
+.title-border4{
+  display: inline-block; /* Ensure the border wraps only around the text */
+  padding: 3px; /* Padding to add space around text */
+  background-color: #cdcaf1; /* Light red background */
+  border-radius: 5px;
+}
+.title-border3 {
+  display: inline-block; /* Ensure the border wraps only around the text */
+  padding: 5px; /* Padding to add space around text */
+  background-color: rgb(255, 226, 242); /* Light pink background */
+}
+.small-title1{
+  display: block; 
+  margin-bottom: 5px;
+}
+.list{
+  display: inline-block; /* Ensure the border wraps only around the text */
+  padding: 3px; /* Padding to add space around text */
+  background-color: #f8eada; /* Light red background */
+  border-radius: 5px;
+}
+.square-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px; /* Gap between squares */
+}
+.square {
+  display: flex;
+  flex-direction: column;
+}
+.square img {
+  width: 100%;
+  height: 200px; /* Fixed height */
+  display: block;
+  object-fit: cover; /* Ensure the image fills the fixed height proportionally */
+}
+.read-more-container {
+    margin-top: 0px;
+}
+.read-more-container a {
+    margin-top: 10px;
+    display: inline-block; /* 确保margin-top在内联元素上有效 */
+}
+
+/* Media Query for small screens */
+@media (max-width: 600px) {
+  .w3-col.l8.s12 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+    .square-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+    }
+
+    .square {
+        flex: 0 0 auto;
+        width: 80%;
+        scroll-snap-align: start;
+    }
+}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Main Container -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32 header-background"> 
+  <h1 style="color: rgb(14, 12, 12)"><b>My Portfolio</b></h1>
+  <h4 style="color: rgb(156, 195, 247); font-weight: bold;">Welcome to the portfolio of_ <span style="color: rgb(199, 223, 255);font-size:25px;">Muen</span></h4>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Portfolio entries and About Me -->
+<div class="w3-col l8 s12">
+
+  <!-- Project 1 (Rectangle) -->
+  <div class="w3-card-4 w3-margin w3-white">
+  
+    <div class="w3-container">
+      <h3></h3>
+      <div class="image-container" style="padding: 5px ;float: right;">
+        <img src="/src_image/grad_project/parkingpal001.png" alt="Nature" style="max-width:150px; max-height:350px; margin-right: 5px; padding-left: 5px; border: 2px solid black;">
+      </div>
+      <h3 class="title-border"><b><a href="project1.html">畢業專題 - 停車夥伴APP</a></b></h3>
+      <h5 class="">Description:</h5>
+      <h5><span class="" style="color: rgb(24, 22, 22);">我和組員開發一款應用程式，具備&nbsp;&nbsp;1.&nbsp;即時停車場車位資訊 &nbsp;&nbsp;2.&nbsp;線上付款 &nbsp;&nbsp;3.&nbsp;月租服務 等功能。
+        專題的核心是利用火災影像辨識技術，幫助在戶外沒有煙霧偵測器的停車場及早發現火勢，提升火災安全性。</span></h5>
+    </div>
+    
+    <div class="w3-container">
+      <p style="color: rgb(101, 120, 215);"><b>(詳細內容請點選標題)</b></p>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Project 2 (Rectangle) -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <div class="w3-container">
+      <h3></h3>
+      <h3 class="title-border"><b><a href="project2.html">企業實習 - 富邦人壽</a></b></h3>
+      <h5 class="">擔任職位 : <span class="" style="color: rgb(24, 22, 22);">數據分析師</span></h5>
+
+      <div>
+        <h5 class="">Description:</h5>
+        <h5><span class="" style="color: rgb(24, 22, 22);">協助部門運用power bi整理工作流程及產出資料，
+          並根據需求製作報表。使用python撰寫自動化處理資料的程式。</span></h5>
+      </div>
+    </div>
+
+    <div class="w3-container">
+      <p style="color: rgb(101, 120, 215);"><b>(詳細內容請點選標題)</b></p>
+    </div>
+  </div>
+  <hr>
+
+  <div class="w3-card-4 w3-margin square" style="display: inline-block; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <div class="w3-container">
+        <h3 class="" style="padding: 1px; text-align: left;"><b>Courses</b></h3>
+        <p style="color: rgb(101, 120, 215);"><b>(詳細內容請點選標題)</b></p>
+    </div>
+  </div>
+
+  <!-- New Section for Books and Skills/Courses -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <div class="w3-container">
+      <ul class="w3-ul">
+
+        <li class="w3-padding-16">
+          <span class="w3-large">
+            <span style="color: rgb(104, 128, 232);"><a href="cs01.html">SQL</a></span>
+          </span><br>          
+          <span>透過此課程學習從基楚到進階的資料庫SQL語言，資料庫使用MySQL資料庫來學習。學習結果主要是程式碼，最後有透過Tableau進行資料視覺化</span>
+        </li>
+
+        <li class="w3-padding-16">
+          <span class="w3-large">
+            <span style="color: rgb(156, 114, 119);"><a href="cs02.html">Git & GitHub</a></span>
+            </span><br>
+          <span></span>         
+          <span>從網路上學習關於git的各種操作(畢業專題即使用git&github和同學進行協作)</span>
+        </li>
+
+        <li class="w3-padding-16">
+          <span class="w3-large">
+            <span style="color: rgb(244, 80, 80);"><a href="cs03.html">Machine Learning</a></span>
+          </span><br>          
+          <span>主要透過開放式課程和udemy課程及購買書籍，學習機器學習知識和用法</span>
+          <br>
+          <span>在大學也有修人工智慧和機器學習和深度學習這三門課</span>
+        </li>
+
+        <li class="w3-padding-16">
+          <span class="w3-large">
+            <span style="color: rgb(28, 109, 190);"><a href="cs04.html">Docker</a></span>           
+            </span><br>
+          <span></span>         
+          <span>學習基本docker指令和撰寫dockerfile去製作image和container和各種功能</span>
+        </li>
+
+        <!-- Add more skills/courses as needed -->
+      </ul>
+    </div>
+  </div>
+  <hr>
+
+  <div class="w3-card-4 w3-margin square" style="display: inline-block; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <div class="w3-container">
+        <h3 class="" style="padding: 10px; margin: 0;"><b>Projects</b></h3>
+    </div>
+  </div>
+
+  <!-- Square Projects Container -->
+  <div class="square-container">
+    <!-- Project 1 (Square) -->
+    <div class="w3-card-4 w3-margin w3-white square">
+        <img src="/src_image/project1.jpg" alt="Project 1">
+        <div class="w3-container">
+            <h4><b><a href="pp1.html">Python data analysis</a></b></h4>
+            <p>資料工程課完成專案-股市資料分析</p>
+            <p style="color: rgb(101, 120, 215);"><b>(詳細內容請點選標題)</b></p>
+        </div>
+    </div>
+
+    <!-- Project 2 (Square) -->
+    <div class="w3-card-4 w3-margin w3-white square">
+        <img src="/src_image/project2.jpg" alt="Project 2">
+        <div class="w3-container">
+            <h4><b><a href="pp2.html">Tableau</a></b></h4>
+            <p>線上課程完成作品</p>
+            <p style="color: rgb(101, 120, 215);"><b>(詳細內容請點選標題)</b></p>
+        </div>
+    </div>
+
+    <!-- Project 3 (Square) -->
+    <div class="w3-card-4 w3-margin w3-white square">
+        <img src="/src_image/project3.jpg" alt="Project 3">
+        <div class="w3-container">
+            <h4><b><a href="pp3.html">Project 3 Hadoop</a></b></h4>
+            <h5>Short description:</h5>
+            <p>Brief description of the project...</p>
+            <p style="color: rgb(101, 120, 215);"><b>(詳細內容請點選標題)</b></p>
+        </div>
+    </div>
+
+    <!-- Project 4 (Square) -->
+    <div class="w3-card-4 w3-margin w3-white square">
+        <img src="/src_image/project4.jpg" alt="Project 4">
+        <div class="w3-container">
+            <h4><b><a href="project6.html">Line bot</a></b></h4>
+            <h5>Short description:</h5>
+            <p>Brief description of the project...</p>
+            <p style="color: rgb(101, 120, 215);"><b>(詳細內容請點選標題)</b></p>
+        </div>
+    </div>
+
+    <!-- Project 5 (Square) -->
+    <div class="w3-card-4 w3-margin w3-white square">
+        <img src="/src_image/project5.jpg" alt="Project 5">
+        <div class="w3-container">
+            <h4><b><a href="project7.html">Resume website</a></b></h4>
+            <h5>Short description:</h5>
+            <p>Brief description of the project...</p>
+            <p style="color: rgb(101, 120, 215);"><b>(詳細內容請點選標題)</b></p>
+        </div>
+    </div>
+
+    <!-- Project 6 (Square) -->
+    <div class="w3-card-4 w3-margin w3-white square">
+        <img src="/src_image/project6.jpg" alt="Project 6">
+        <div class="w3-container">
+            <h4><b><a href="project8.html">Data Engineer</a></b></h4>
+            <h5>Short description:</h5>
+            <p>Brief description of the project...</p>
+            <p style="color: rgb(101, 120, 215);"><b>(詳細內容請點選標題)</b></p>
+        </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="w3-card-4 w3-margin square" style="display: inline-block; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <div class="w3-container">
+        <h3 class="" style="padding: 10px; margin: 0;"><b>&nbsp; Activities &nbsp;</b></h3>
+    </div>
+  </div>
+
+  <div class="w3-card-4 w3-margin w3-white" style="border-left: 6px solid #e94d21;">
+    <div class="w3-container">
+      <h3 class="title-border2" style="background-color: #ffffff; color: rgb(142, 150, 167);">
+        <b>參加 &nbsp;Google Cloud 培訓計畫第四季: GenAI特別篇</b></h3>
+        <div style="float:right; margin-top: 15px; margin-bottom: 15px;">
+          <video width="150" height="250" autoplay loop muted style="border: 2px solid black;">
+            <source src="src_image/googlecloudpresent.mp4" type="video/mp4" >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <span><br></span>
+        <a href="https://www.cloudskillsboost.google/public_profiles/d5f1658b-b991-4130-9c20-33e107fc242e" target="_blank" style="font-size:large;">
+          學習證明: &nbsp;Google Badges link
+        </a>        
+        <br>
+        <br>        
+      <span>免費報名參加這個活動除了可以了解google cloud的功能還有免費的額度去實際操作，</span><br>
+      <span>例如: 去使用cloud shell指令去創建虛擬機或創建bucket存儲圖片並套用機器學習分析內容等。</span><br>
+      <span>雖然指令有點複雜但它都會一步一步帶著你所以能完成實作的Lab。</span><br>
+      <span>最後完成還可以拿到獎品!</span><br>
+      <span>&nbsp;</span>
+      <br>
+      
+    </div>
+  </div>
+
+  <div class="w3-card-4 w3-margin w3-white" style="border-left: 6px solid #e94d21;">
+    <div class="w3-container">
+      <h3 class="title-border2" style="background-color: #ffffff; color: rgb(142, 150, 167);">
+        <b>參加 &nbsp;資訊應用服務創新競賽</b></h3>
+        <div style="float:right; margin-top: 15px; margin-bottom: 15px; margin-left: 30px;">
+          <img width="400px" height="250px" src="/src_image/grad_project/grad_people.jpg" alt="Project 4">
+        </div>
+        <div></div>
+        <span style="font-size: medium;">通過初審並晉級決賽</span>
+        
+        <span><br></span>        
+        
+        <br>        
+      <span>我們以畢業專題ParkingPal作為參賽的作品，我們先撰寫系統說明文件再拍攝系統說明影片去報名比賽。</span><br>
+      <span>成功通過初審後也就是晉級到決賽，再到台大體育館實體講解報告給評審聽。</span><br>
+      <span>但可惜的是在評審問答的環節回答得不是很好，所已沒能得名。</span><br>
+      <span>不過我看作是很好參賽的經驗，我第一次和同學一同製作出有被專業人士認同的作品。</span><br>
+      <span>我還是依舊以我們的作品為榮。</span><br>
+      <br>
+      
+    </div>
+  </div>
+
+</div>
+
+<!-- Sidebar -->
+<div class="w3-col l4">
+  <!-- Popular Projects or Posts -->
+  <div class="w3-card w3-margin">
+    <img src="/src_image/avatar.jpg" style="width:100%">
+    <div class="w3-container w3-padding">
+      <h4 class=""><b>About Me</b></h4>
+      <span style="font-size: large;"><b>葉沐恩</b></span><br><br>
+      <span>連絡電話: 0953696865</span><br>
+      <span>信箱: muenyeh@gmail.com</span><br>
+
+    </div>
+  </div>
+  <hr>
+
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4 class="">Hard skills & experiences</h4>
+    </div>
+    <ul class="w3-ul w3-white">
+      <li class="w3-padding-16">
+        <span class="small-title1">Python</span>
+        <span class="small-title1">Java</span>
+        <span class="small-title1">Mysql / relational DB &nbsp;&nbsp;&nbsp; Firebase/ NoSQL DB</span>
+        <span class="small-title1">Git & GitHub</span>
+        <span class="small-title1">Tableau&nbsp;&nbsp;Power bi</span>
+        <span class="small-title1">Docker</span>
+        <span class="small-title1">Hadoop</span>
+        <span class="small-title1">Machine learning</span>
+
+      </li>
+      <!-- Repeat similar blocks for other projects -->
+    </ul>
+  </div>
+  <hr>
+
+  <!-- Tags -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4 class="">Tags</h4>
+    </div>
+    <div class="w3-container w3-white">
+      <p><span class="w3-tag w3-black w3-margin-bottom">Design</span> 
+        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Web</span>
+        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Photography</span>
+      <!-- Add more tags as needed -->
+      </p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <p>&copy; 2024 [Muen]. All rights reserved.</p>
+</footer>
+
+</div>
+
+</body>
+</html>
