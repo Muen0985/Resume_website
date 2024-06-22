@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            color: rgb(79, 77, 82);
+            padding: 3px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block; /* 使背景寬度適應內容 */
+            width: 350px; /* 自動適應內容寬度 */
+        }
+
+        .content {
+            padding: 10px;
+            background-color: white;
+            border-left: 5px solid #d3d3d3;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; /* 調整區域之間的間距 */
+            display: flex; /* 使用 Flexbox 進行佈局 */
+            flex-wrap: wrap; /* 允許多個連結自動換行 */
+        }
+
+        .link-preview {
+            flex: 1 1 350px; /* 每個連結預覽容器彈性增長，最大寬度為 350px */
+            align-items: center;
+            margin: 10px; /* 調整連結預覽之間的間距 */
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: #333;
+            text-align: center; /* 水平居中文字 */
+        }
+
+        .link-preview img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px; /* 調整圖片與文本間距 */
+        }
+
+        .link-preview-content {
+            flex-grow: 1;
+        }
+
+        .link-preview-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .link-preview-description {
+            font-size: 14px;
+            color: #666;
+            margin: 5px 0 0;
+        }
+
+        .link-preview:hover {
+            background-color: #f0f0f0;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+        }
+
+        .image-gallery img {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid black;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .caption {
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .description {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="section">
+    <h2>Resume Website描述</h2>
+    <div class="content description">
+        <p><b>這個簡易的網站我是運用OpenAI的chatgpt來做撰寫html css的部分，細項我再自己去做修改。</b><br>
+           <b>先構想好UI會長什麼樣子，再讓chatgpt來生成。如果是大部分的樣貌不是我想要的再針對不對的地，方</b><br>
+            <b>指出可能的原因請他分析出原因並改正，這樣之後遇到問題我也能理解並有能力自己修改。</b></p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>成果連結 <span style="font-size: small;"></span></h2>
+    <div class="content">
+        <a href="https://youtu.be/r-uOLxNrNk8?si=WMSj7wDVt3SnvLtZ" target="_blank" class="link-preview">
+            <img src="src_image/resume_page.png" alt="YouTube Preview">
+            <div class="link-preview-content">
+                <p class="link-preview-title">就是本網站</p>
+            </div>
+        </a>
+        
+    </div>
+</div>
+
+</body>
+</html>

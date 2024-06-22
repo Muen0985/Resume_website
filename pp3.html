@@ -18,7 +18,7 @@
         }
 
         .section h2 {
-            color: rgb(56, 113, 204);
+            color: rgb(79, 77, 82);
             padding: 3px;
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -85,11 +85,24 @@
             gap: 20px;
         }
 
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+        }
+
         .image-gallery img {
             max-width: 300px;
             width: 100%;
             border-radius: 5px;
+            border: 1px solid black;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .caption {
+            margin-top: 5px;
+            text-align: center;
         }
 
         .description {
@@ -102,35 +115,49 @@
 <div class="section">
     <h2>Hadoop 學習描述</h2>
     <div class="content description">
-        <p><b>在大學選修大數據分析這門課，學習使用hadoop(用java撰寫mapreduce)和spark來做大數據的資料處理
+        <p><b>在大學選修大數據分析這門課，學習Hadoop的環境架構跟建設並使用hadoop(用java撰寫mapreduce)和spark來做大數據的資料處理完成報告。
         </b></p>
-    </div>
 </div>
 
 <div class="section">
-    <h2>學習成果展示</h2>
+    <h2>hadoop 期末專案</h2>
     <div class="content image-gallery">
-        <img src="src_image/result1.jpg" alt="學習成果圖片 1">
-        <img src="src_image/result2.jpg" alt="學習成果圖片 2">
-        <img src="src_image/result3.jpg" alt="學習成果圖片 3">
+        <div class="image-container">
+            <img src="src_image/hadoop/50070.png" alt="學習成果圖片 1" style="max-width: 450px;">
+            <div class="caption">配置一個 master node 跟三個 data nodes</div>
+        </div>
+    </div>
+    <div class="content image-gallery">
+        <div class="image-container">
+            <img src="src_image/hadoop/mrt.png" alt="學習成果圖片 1" style="max-width: 200px;">
+            <div class="caption">使用政府公開捷運資料集分析</div>
+        </div>
+        <div class="image-container">
+            <img src="src_image/hadoop/mapreduce1.png" alt="學習成果圖片 1" style="max-width: 600px;">
+            <div class="caption">MAP 階段:讀取每行輸入數據。將 station-hour 作為鍵，進出站人數作為值，輸出為鍵值對。</div>
+        </div>
+        <div class="image-container">
+            <img src="src_image/hadoop/mapreduce2.png" alt="學習成果圖片 1" style="max-width: 500px;">
+            <div class="caption">REDUCE 階段:接收Mapper鍵值對。累加出每個時段的總人數輸出 station-hour 作為鍵，總和作為值。</div>
+        </div>
+    </div>
+    <div class="content image-gallery">
+        <div class="image-container">
+            <img src="src_image/hadoop/mrt_pp.png" alt="學習成果圖片 1" style="max-width: 400px;">
+            <div class="caption">運用python資料分析 (部分程式碼)</div>
+        </div>
+        <div class="image-container">
+            <img src="src_image/hadoop/MRT_STATS.png" alt="學習成果圖片 1" style="max-width: 350px;">
+            <div class="caption">資料視覺化</div>
+        </div>
+        <div class="image-container">
+            <img src="src_image/hadoop/MRT_TIME.png" alt="學習成果圖片 1" style="max-width: 250px;">
+            <div class="caption">統計車站高峰時間的數據</div>
+        </div>
     </div>
 </div>
 
-<div class="section">
-    <h2>參考連結 <span style="font-size: small;">(可點選觀看)</span></h2>
-    <div class="content">
-        <a href="https://www.udemy.com/course/docker-china/?couponCode=ST21MT61124" target="_blank" class="link-preview">
-            <img src="" alt="Udemy Docker 課程連結">
-            <div class="link-preview-content">
-                <p class="link-preview-title">Python 資料分析教程</p>
-                <p class="link-preview-description">學習如何使用 Python 進行資料分析的完整指南。</p>
-            </div>
-        </a>
 
-        <!-- 添加更多的連結 -->
-        
-    </div>
-</div>
 
 </body>
 </html>
