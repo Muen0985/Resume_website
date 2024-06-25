@@ -79,21 +79,19 @@
             background-color: #f0f0f0;
         }
 
-        .image-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .image-gallery img {
-            max-width: 300px;
-            width: 100%;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
         .description {
             margin-bottom: 20px;
+        }
+        .content.image-gallery figure {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .content.image-gallery figcaption {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #555;
         }
     </style>
 </head>
@@ -102,34 +100,61 @@
 <div class="section">
     <h2>機器學習 學習描述</h2>
     <div class="content description">
-        <p><b>主要透過開放式課程和udemy課程及購買書籍，學習機器學習知識和用法
-            在大學也有修人工智慧和機器學習和深度學習這三門課</b></p>
+        <p><b>
+            透過開放式課程和udemy課程及購買書籍，學習機器學習知識和用法
+            在大學也有修〖人工智慧〗和〖機器學習〗和〖深度學習〗這三門課，<br>
+            主要學習使用scikit learn套件和使用Tensorflow、keras
+            來做影像辨識和回歸等模型。<br><br>
+            學校的課程都以實作練習為主並沒有一個專案的製作，所以我是自己再去實作有興趣的專案。
+        </b></p>
+    </div>
+
+    <div class="content description">
+        <p><b>
+        因為scikit learn還有很多套件沒有接觸到，再到Udemy上再更廣泛的學習。<br>
+            課程是用一個單元一個套件針對一個題目去做預測分析。<br>
+            因為有很多不同的套件和實作內容，我就都放上github上去了。<br><br>
+        <a href="https://github.com/Muen0985/ML_sklearn_projcect" target="_blank" style="font-size:large;">
+            機器學習Github
+            </a>
+        </b></p>
+        
+    </div>
+    <h2>單元實作通常以一個小專案進行(大致流程)</h2>
+    <div class="section">
+        <div class="content image-gallery">
+            <figure>
+                <img src="src_image/ML_Sklearn/ml01.png" alt="學習成果圖片 1" style="max-width: 550px;">
+                <figcaption><b>先進行資料的分析探索</b></figcaption>
+            </figure>
+            <figure>
+                <img src="src_image/ML_Sklearn/ml02.png" alt="學習成果圖片 2" style="max-width: 450px;">
+                <figcaption><b>再來建立適當的模型及尋找最佳參數</b></figcaption>
+            </figure>
+            <figure>
+                <img src="src_image/ML_Sklearn/ml03.png" alt="學習成果圖片 3" style="max-width: 300px;">
+                <figcaption><b>最後顯示出模型成果及分析優劣</b></figcaption>
+            </figure>
+        </div>
     </div>
 </div>
 
-<div class="section">
-    <h2>學習成果展示</h2>
-    <div class="content image-gallery">
-        <img src="src_image/result1.jpg" alt="學習成果圖片 1">
-        <img src="src_image/result2.jpg" alt="學習成果圖片 2">
-        <img src="src_image/result3.jpg" alt="學習成果圖片 3">
-    </div>
-</div>
+
 
 <div class="section">
     <h2>學習連結 <span style="font-size: small;">(可點選觀看)</span></h2>
     <div class="content">
-        <a href="https://www.youtube.com/watch?v=Ye018rCVvOo&list=PLJV_el3uVTsMhtt7_Y6sgTHGHp1Vb2P2J&ab_channel=Hung-yiLee" target="_blank" class="link-preview">
-            <img src="https://i.ytimg.com/vi/Ye018rCVvOo/maxresdefault.jpg" alt="Youtube 台大開放式課程 課程連結">
-            <div class="link-preview-content">
-                <p class="link-preview-title">台大開放式課程</p>
-            </div>
-        </a>
-
         <a href="https://www.udemy.com/course/python-for-machine-learning-data-science-masterclass/?couponCode=ST21MT61124" target="_blank" class="link-preview">
             <img src="src_image/MLudemy.png" alt="Udemy ML 課程連結">
             <div class="link-preview-content">
                 <p class="link-preview-title">Udemy machine learning course</p>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=Ye018rCVvOo&list=PLJV_el3uVTsMhtt7_Y6sgTHGHp1Vb2P2J&ab_channel=Hung-yiLee" target="_blank" class="link-preview">
+            <img src="https://i.ytimg.com/vi/Ye018rCVvOo/maxresdefault.jpg" alt="Youtube 台大開放式課程 課程連結">
+            <div class="link-preview-content">
+                <p class="link-preview-title">台大開放式課程</p>
             </div>
         </a>
 
