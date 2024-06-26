@@ -62,11 +62,12 @@
             height: auto;
             border-radius: 10px;
             margin: 20px 0;
+            margin-left: 20px;
             max-width: 500px;
         }
 
         .project figcaption {
-            text-align: center;
+            text-align: left;
             font-style: italic;
             color: #555;
             margin-bottom: 20px;
@@ -97,36 +98,49 @@
                 <a href="index.html">回到首頁</a>
                 <a href="pp5.html">回到專案項目</a>
             </nav>
-            <h2>Project Title 1</h2><br>
-            <img src="src_image/ML_Sklearn/ml02.png" alt="Project Image 1">
-            <figcaption>Image description for Project 1.</figcaption>
-            <p><strong>Background:</strong> Brief description of the project background and motivation.</p>
-            <p><strong>Problem Statement:</strong> Description of the problem being solved.</p>
-            <h3>Data</h3>
-            <p><strong>Data Source:</strong> Description of the data source.</p>
-            <p><strong>Data Characteristics:</strong> Description of the main characteristics of the data.</p>
-            <p><strong>Data Preprocessing:</strong> Explanation of data cleaning, processing, and feature engineering steps.</p>
-            <h3>Model Selection and Training</h3>
-            <p><strong>Model Chosen:</strong> Explanation of the model chosen and why.</p>
-            <p><strong>Model Architecture:</strong> For complex models, a description of the architecture.</p>
-            <p><strong>Training Process:</strong> Description of the training process, including hyperparameter selection.</p>
+            <h2>Project 1</h2><br>
+    
+            <p><strong>Background:</strong> 使用機器學習套件來將影片音訊轉成文字，再藉由文章摘要擷取出重點部分。</p>
+            <p><strong>Data Source:</p>
+            <img src="https://i.ytimg.com/vi/yJ-gxcRVu1c/maxresdefault.jpg" alt="YouTube Preview" style="max-width: 200px;">
+            <img src="https://i.ytimg.com/vi/K1saMpQCBmE/maxresdefault.jpg" alt="YouTube Preview" style="max-width: 200px;">
+            <figcaption>挑選了一段長度3:20的影片及30秒的shorts,
+                作為音訊資料
+            </figcaption>
+            <p><strong>Data Preprocessing:  先下載youtube的音訊轉wav檔，再匯入到google 雲端硬碟</strong> </p>
+            <br>
+            <h3>Model Selection</h3>
+            
+            <p><strong>Model : </strong>音訊轉文字 -  OpenAi whisper 、 speech_recognition &nbsp;&nbsp; 文章摘要擷取 -  bert-extractive-summarizer</p>
+            <br>
             <h3>Results and Evaluation</h3>
-            <p><strong>Evaluation Metrics:</strong> Description of the evaluation metrics and why they were chosen.</p>
-            <p><strong>Experimental Results:</strong> Presentation of the experimental results, including visualizations.</p>
-            <h3>Deployment and Application</h3>
-            <p><strong>Deployment Method:</strong> Explanation of how the model was deployed.</p>
-            <p><strong>Application Scenarios:</strong> Examples of how the model is used in real-world scenarios.</p>
-            <p><strong>User Feedback:</strong> If available, feedback from users or performance data in application.</p>
-            <h3>Challenges and Future Work</h3>
-            <p><strong>Challenges and Limitations:</strong> Discussion of challenges and limitations encountered.</p>
-            <p><strong>Future Work:</strong> Potential improvements and future research directions.</p>
+            <p><b>語音辨識 :</b></p>
+            <img src="src_image/ML_Sklearn/sound_result.png" alt="YouTube Preview" style="max-width: 400px;">
+            <img src="src_image/ML_Sklearn/sound_result2.png" alt="YouTube Preview" style="max-width: 450px;">
+            <figcaption> podcast shorts: 可以看出Whisper產出的文字比speech_recognition更無缺漏且準確</figcaption>
+            <figcaption>espn video: Whisper產出相較speech_recognition大約多了50多個字</figcaption>
+            <hr>
+            <p><b>文章摘要擷取 :</b></p>
+            <img src="src_image/ML_Sklearn/summary_text.png" alt="YouTube Preview" style="max-width: 450px;">
+            <figcaption>皆使用 bert-extractive-summarizer，若參數調整好效果還不錯，想知道的訊息大致都有保留住</figcaption>
+            <br>
             <h3>Project Demo</h3>
-            <p><strong>Code:</strong> Key code snippets and link to the code repository.</p>
-            <p><strong>Visualizations:</strong> Visual representations of data and results.</p>
-            <p><strong>Demo:</strong> Link to online demo or project demo video.</p>
+            <p><strong>Code:</strong></p>
+            <img src="src_image/ML_Sklearn/sr_code.png" alt="YouTube Preview" style="max-width: 450px;">
+            <img src="src_image/ML_Sklearn/wh_code1.png" alt="YouTube Preview" style="max-width: 450px;">
+            <figcaption>第一張圖片是使用speech_recognition的程式 &nbsp;/ &nbsp; 第二張圖片是使用OpenAI Whisper的程式</figcaption>
+            <img src="src_image/ML_Sklearn/wh_code2.png" alt="YouTube Preview" style="max-width: 450px;">
+            <figcaption>使用bert-extractive-summarizer的程式碼，有根據不同的文章調整參數。例如，shorts本身是影片的精華，因此參數ratio設定擷取約60%的內容</figcaption>
+
+            <br>
             <h3>Conclusion</h3>
-            <p><strong>Summary:</strong> Summary of main achievements and personal gains.</p>
-            <p><strong>Acknowledgements:</strong> Acknowledgement of help or resources provided by others.</p>
+            <p><strong>探討各個模型的技術</strong> </p>
+            <p><strong>Speech_recognition  V.S. OpenAI Whisper</strong></p>
+            <p>&nbsp;&nbsp; For complex models, a description of the architecture.</p>
+            <p>&nbsp;&nbsp; For complex models, a description of the architecture.</p>
+            <p><strong>bert-extractive-summarizer:</strong></p>
+            <p>&nbsp;&nbsp; For complex models, a description of the architecture.</p>
+
         </section>
         <!-- Add more sections for additional projects -->
     </main>
