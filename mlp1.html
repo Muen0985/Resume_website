@@ -64,6 +64,7 @@
             margin: 20px 0;
             margin-left: 20px;
             max-width: 500px;
+            border: 1px solid rgb(176, 176, 176);
         }
 
         .project figcaption {
@@ -74,8 +75,10 @@
         }
 
         .project h3 {
+            margin-top: 0;
+            font-size: 1.8rem;
+            color: #6287ae;
             margin-bottom: 10px;
-            color: #555;
         }
 
         /* Responsive Styles */
@@ -107,37 +110,34 @@
             <figcaption>挑選了一段長度3:20的影片及30秒的shorts,
                 作為音訊資料
             </figcaption>
-            <p><strong>Data Preprocessing:  先下載youtube的音訊轉wav檔，再匯入到google 雲端硬碟</strong> </p>
-            <br>
+            <br><br>
             <h3>Model Selection</h3>
             
             <p><strong>Model : </strong>音訊轉文字 -  OpenAi whisper 、 speech_recognition &nbsp;&nbsp; 文章摘要擷取 -  bert-extractive-summarizer</p>
-            <br>
-            <h3>Results and Evaluation</h3>
+            <br><br>
+            <h3>Results</h3>
             <p><b>語音辨識 :</b></p>
             <img src="src_image/ML_Sklearn/sound_result.png" alt="YouTube Preview" style="max-width: 400px;">
-            <img src="src_image/ML_Sklearn/sound_result2.png" alt="YouTube Preview" style="max-width: 450px;">
-            <figcaption> podcast shorts: 可以看出Whisper產出的文字比speech_recognition更無缺漏且準確</figcaption>
-            <figcaption>espn video: Whisper產出相較speech_recognition大約多了50多個字</figcaption>
-            <hr>
+            <img src="src_image/ML_Sklearn/sound_result2.png" alt="YouTube Preview" style="max-width: 500px;">
+            <figcaption> podcast shorts (左): 可以看出Whisper產出的文字比speech_recognition更無缺漏且準確</figcaption>
+            <figcaption>espn video(右): Whisper產出相較speech_recognition大約多了50多個字</figcaption>
+            <hr><br>
             <p><b>文章摘要擷取 :</b></p>
             <img src="src_image/ML_Sklearn/summary_text.png" alt="YouTube Preview" style="max-width: 450px;">
             <figcaption>皆使用 bert-extractive-summarizer，若參數調整好效果還不錯，想知道的訊息大致都有保留住</figcaption>
-            <br>
-            <h3>Project Demo</h3>
-            <p><strong>Code:</strong></p>
+            <br><br>
+            <h3>Code Demo</h3>
             <img src="src_image/ML_Sklearn/sr_code.png" alt="YouTube Preview" style="max-width: 450px;">
             <img src="src_image/ML_Sklearn/wh_code1.png" alt="YouTube Preview" style="max-width: 450px;">
-            <figcaption>第一張圖片是使用speech_recognition的程式 &nbsp;/ &nbsp; 第二張圖片是使用OpenAI Whisper的程式</figcaption>
+            <figcaption>第一張圖片是使用speech_recognition的程式 &nbsp;/ &nbsp; 第二張圖片是使用OpenAI Whisper的程式 (model size: small)</figcaption>
             <img src="src_image/ML_Sklearn/wh_code2.png" alt="YouTube Preview" style="max-width: 450px;">
             <figcaption>使用bert-extractive-summarizer的程式碼，有根據不同的文章調整參數。例如，shorts本身是影片的精華，因此參數ratio設定擷取約60%的內容</figcaption>
 
-            <br>
-            <h3>Conclusion</h3>
-            <p><strong>探討各個模型的技術</strong> </p>
+            <br><br>
+            <h3>Conclusion 探討各模型的技術</h3>
             <p><strong>Speech_recognition  V.S. OpenAI Whisper</strong></p>
-            <p>&nbsp;&nbsp; For complex models, a description of the architecture.</p>
-            <p>&nbsp;&nbsp; For complex models, a description of the architecture.</p>
+            <p>&nbsp;&nbsp; 按照實作結果是whisper的結果較好，Speech_recognition的API我使用的是google web speech</p>
+            <p>&nbsp;&nbsp; 但google未公開該模型架構，因此轉研究whisper的模型是如何建構，使錯誤率顯著的降低</p>
             <p><strong>bert-extractive-summarizer:</strong></p>
             <p>&nbsp;&nbsp; For complex models, a description of the architecture.</p>
 
