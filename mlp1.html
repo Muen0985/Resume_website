@@ -134,12 +134,28 @@
             <figcaption>使用bert-extractive-summarizer的程式碼，有根據不同的文章調整參數。例如，shorts本身是影片的精華，因此參數ratio設定擷取約60%的內容</figcaption>
 
             <br><br>
-            <h3>Conclusion 探討各模型的技術</h3>
-            <p><strong>Speech_recognition  V.S. OpenAI Whisper</strong></p>
-            <p>&nbsp;&nbsp; 按照實作結果是whisper的結果較好，Speech_recognition的API我使用的是google web speech</p>
-            <p>&nbsp;&nbsp; 但google未公開該模型架構，因此轉研究whisper的模型是如何建構，使錯誤率顯著的降低</p>
-            <p><strong>bert-extractive-summarizer:</strong></p>
-            <p>&nbsp;&nbsp; For complex models, a description of the architecture.</p>
+            <h3>Conclusion 探討模型的技術</h3>
+            <h4>OpenAI Whisper:</h4>
+            <p>&nbsp;&nbsp; 在實作上whisper的表現較好，Speech_recognition的API我使用的是google web speech
+                <br>&nbsp;&nbsp; 但google未公開模型架構，因此研究whisper的模型是如何建構，使錯誤率顯著的降低</p>
+            <h4>資料:</h4> 
+            <p>&nbsp;&nbsp; Whisper數據集包含68萬小時的標註音訊，使用sequence-to-sequence model來學習語音和其轉錄的文本，<br>&nbsp;&nbsp; 且消除了逆文本正規化步驟，簡化了語音辨識流程<br>
+                &nbsp;&nbsp; 將音訊資料分割成每30秒的片段，每個片段都有相應的文本作為訓練標籤，同時使用包含無語音片段的音頻來訓練，以提高區分語音和非語音部分的準確性
+                </p>
+            <h4>模型 - Transformer encoder / decoder: </h4>
+            <p>&nbsp;&nbsp;
+                encoder：
+                使用小型的stem，包含兩個卷積層，濾波器寬度為3，第二個卷積層步幅為2，並使用GELU激活函數<br>
+                &nbsp;&nbsp; decoder：
+                解碼器使用學習的位置嵌入和綁定的輸入-輸出標記表示
+                編碼器和解碼器具有相同的寬度和Transformer塊數量，確保了模型的對稱性
+                </p>
+            <h4>訓練: </h4>
+            <p>&nbsp;&nbsp; 使用256個片段的批次大小進行訓練，模型經過220次更新，約對數據集進行兩到三次訓練，由於只訓練了幾個epochs，因此過擬合不是問題
+                <br>&nbsp;&nbsp; 沒有使用數據增強或正則化方法，而是依賴大型數據集的多樣性促進廣泛性
+                </p>
+    
+    
 
         </section>
         <!-- Add more sections for additional projects -->
