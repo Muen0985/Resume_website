@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Projects Showcase</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .project {
+            background: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        
+        .project h2 {
+            margin-top: 0;
+            font-size: 1.8rem;
+            color: #007bff;
+            display: inline-block;
+        }
+
+        .project nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .project nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 10px;
+            padding: 10px 20px;
+            background: #85a4c5;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .project nav a:hover {
+            background: #003f7f;
+        }
+
+        .project img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+            margin-left: 20px;
+            max-width: 500px;
+            border: 1px solid rgb(176, 176, 176);
+        }
+
+        .project figcaption {
+            text-align: left;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .project h3 {
+            margin-top: 0;
+            font-size: 1.8rem;
+            color: #6287ae;
+            margin-bottom: 10px;
+        }
+        .project-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .project {
+                padding: 15px;
+            }
+
+            .project h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Project 2 -->
+        <section class="project">
+            <nav>
+                <a href="index.html">回到首頁</a>
+                <a href="pp5.html">回到專案項目</a>
+            </nav>
+            <h2>Project 2</h2><br>
+    
+            <p><strong>Background:</strong> 使用yoloV8影像辨識偵測車輛並使用opencv繪製出框線</p>
+            <p><strong>Data Source:</p>
+            <a href="https://www.kaggle.com/datasets/nadinpethiyagoda/vehicle-dataset-for-yolo" target="_blank">vehicle-dataset-for-yolo</a>
+            <figcaption>使用kaggle資料集作為辨識車輛的訓練資料</figcaption>
+            <br><br>
+
+            <h3>Model Selection</h3>
+            <p><strong>Model : </strong>影像辨識 - YOLOV8</p>
+            <br><br>
+            <h3>Results</h3>
+            <p><b>影像辨識 :</b></p>
+            <section class="project-images w3-card-4 w3-padding">
+                <div class="w3-row-padding">
+                    <div class="w3-col m3" style="padding-left: 10px; padding-right: 60px;">
+                        <video id="video1" width="230" height="450" loop muted>
+                            <source src="src_image/line_bot/vv1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="custom-controls">
+                            <button onclick="playPause('video1')">播放/暫停</button>
+                        </div>
+                    </div>
+                    <p>車輛影像辨識 繪製框線</p>
+                </div>
+                <script>
+                    function playPause(videoId) {
+                        var video = document.getElementById(videoId);
+                        if (video.paused) {
+                            video.play();
+                        } else {
+                            video.pause();
+                        }
+                    }
+                </script>
+            </section>
+            <hr><br>
+            <br><br>
+
+            <h3>Code Demo</h3>
+            <img src="src_image/ML_Sklearn/ml2_01.png" alt="YouTube Preview" style="max-width: 450px;">
+            <figcaption>使用yolov8 model的程式</figcaption>
+            <img src="src_image/ML_Sklearn/ml2_02.png" alt="YouTube Preview" style="max-width: 450px;">
+            <figcaption>使用opencv來繪製出便是目標的框線</figcaption>
+
+            <br><br>
+            <h3>Conclusion 探討模型的技術</h3>
+            <h4>YOLOV8:</h4>
+            <p>根據Ultralytics的官網說了以下幾個特點</p>
+            <h4>模型: </h4>
+            <p>&nbsp;&nbsp;
+                骨幹網路（backbone network）用於從輸入圖像中提取低級和高級特徵。
+                <br>&nbsp;&nbsp; 這些特徵被送入頸部架構（neck architecture），進一步處理以強化特徵，提升物體檢測的效果。
+                </p>
+            <p>
+                &nbsp;&nbsp; 無錨檢測 （Anchor Free Detection）：
+                <br>&nbsp;&nbsp; 傳統的檢測頭，通常使用錨點來預設各種尺度和縱橫比的框架，
+                並將這些錨點與特徵圖上的每個位置配對，以預測物體的存在和位置。
+                <br>
+                &nbsp;&nbsp; 無錨分割Ultralytics頭，則是透過分割的方式來檢測物體，並直接在特徵圖的每個位置上預測物體的中心點、寬度和高度。
+            </p>
+    
+    
+
+        </section>
+        <!-- Add more sections for additional projects -->
+    </main>
+
+</body>
+</html>
