@@ -109,10 +109,29 @@
 <div class="section">
     <h2>學習成果展示</h2>
     <div class="content image-gallery">
-        <img src="src_image/result1.jpg" alt="學習成果圖片 1">
+        <div class="w3-col m3" style="padding-left: 20px; padding-right: 60px;">
+            <video id="video1" width="330" height="450" loop muted>
+                <source src="src_image/docker_flaskredis.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="custom-controls">
+                <button onclick="playPause('video1')">播放/暫停</button>
+            </div>
+            <p>撰寫dockerfile製作python flask image 及拉取 redis image <br>製作可計算造訪次數的網頁</p>
+        </div>
         <img src="src_image/result2.jpg" alt="學習成果圖片 2">
         <img src="src_image/result3.jpg" alt="學習成果圖片 3">
     </div>
+    <script>
+        function playPause(videoId) {
+            var video = document.getElementById(videoId);
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+    </script>
 </div>
 
 <div class="section">
