@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Docker學習</title>
+    <title>Airflow學習</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -100,9 +100,9 @@
 <body>
 
 <div class="section">
-    <h2>Docker 學習描述</h2>
+    <h2>Airflow 學習描述</h2>
     <div class="content description">
-        <p><b>學習基本docker指令和撰寫dockerfile去製作image、container和docker-compose功能</b></p>
+        <p><b>使用docker-compose來建立環境，學習Airflow撰寫DAGs和其他的指令並了解Airflow UI介面</b></p>
     </div>
 </div>
 
@@ -110,36 +110,21 @@
     <h2>學習成果展示</h2>
     <div class="content image-gallery">
         <div class="w3-col m3" style="padding-left: 20px; padding-right: 60px;">
-            <video id="video1" width="330" height="450" loop muted>
-                <source src="src_image/docker_flaskredis.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="custom-controls">
-                <button onclick="playPause('video1')">播放/暫停</button>
-            </div>
-            <p>撰寫dockerfile製作python flask image 及拉取 redis image <br>製作可計算造訪次數的網頁</p>
-            <h4><a href="https://github.com/Muen0985/Docker_skills">本專案使用的dockerfile、docker-compose及其他的docker學習:Github</a></h4>
+            <h4>獲取原始資料後使用python進行資料整理，再匯入MySql資料庫儲存，<br> 再使用SQL去獲取想要的分析結果，最後匯出分析結果檔案</h4>
+            <h5>(DAG在dags資料夾的store_DAG.py)</h5>
+            <img src="src_image/airflow/airflow_graph.png" alt="" style="max-width:650px; max-height:550px; margin-right: 5px; padding-left: 5px; border: 2px solid black;">
+            <h4><a href="https://github.com/Muen0985/Airflow_projects">本專案使用的docker-compose環境配置、DAGs、各種資料:Github連結</a></h4>
         </div>
     </div>
-    <script>
-        function playPause(videoId) {
-            var video = document.getElementById(videoId);
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-            }
-        }
-    </script>
 </div>
 
 <div class="section">
     <h2>學習連結 <span style="font-size: small;">(可點選觀看)</span></h2>
     <div class="content">
-        <a href="https://www.udemy.com/course/docker-china/?couponCode=ST21MT61124" target="_blank" class="link-preview">
-            <img src="src_image/dockerudemy.png" alt="Udemy Docker 課程連結">
+        <a href="https://www.udemy.com/course/apache-airflow/?couponCode=KEEPLEARNING" target="_blank" class="link-preview">
+            <img src="src_image/airflow/airflow_course.png" alt="Udemy Airflow 課程連結">
             <div class="link-preview-content">
-                <p class="link-preview-title">Udemy docker course</p>
+                <p class="link-preview-title">Udemy Airflow course</p>
             </div>
         </a>
 
